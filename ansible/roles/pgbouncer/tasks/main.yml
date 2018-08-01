@@ -1,4 +1,7 @@
 ---
+- name: Create defaults directory
+  file: path=/etc/default/ state=directory
+
 - name: Copy pgbouncer start file
   template: src=pgbouncer dest=/etc/default/pgbouncer mode=0644 force=yes
   notify: restart pgbouncer
